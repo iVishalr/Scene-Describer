@@ -51,13 +51,6 @@ If you make any changes in any of the javascript files, please restart the serve
 
 Alternatively, you can start your server by typing `$ nodemon app.js` in terminal. This will restart your server automatically when you make changes in the server files.
 
-### Whats public folder?
-
-This is a folder that the server will serve when it gets a GET request from the user. Remember, if you add any image or anything that the user will see, must go to this folder. 
-
-How can I add image to the webpage?
-
-For example, when you add an image to the webpage, do not mention public in the path to the image. This is because the server serves this public folder. 
 
 ### Report
 

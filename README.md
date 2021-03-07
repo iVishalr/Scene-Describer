@@ -1,6 +1,18 @@
 # Scene Describer
 
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![made-with-lua](https://img.shields.io/badge/Made%20With-Lua-%23277cf2)](https://www.lua.org) [![made-with-nodejs](https://img.shields.io/badge/Made%20With-NodeJs-darkgreen)](https://nodejs.org/en/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SummerProjectCODS/Scene-Describer/graphs/commit-activity)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![made-with-lua](https://img.shields.io/badge/Made%20With-Lua-%23277cf2)](https://www.lua.org) [![made-with-nodejs](https://img.shields.io/badge/Made%20With-NodeJs-darkgreen)](https://nodejs.org/en/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/iVishalr/Scene-Describer/graphs/commit-activity)
+
+This project was done as a part of Summer Project organized by the CODS Community of PES University. I would like to thank CODS for giving us this opportunity. Thank You!
+
+I'm just leaving this project here for academic and non-commercial use only.
+
+## Contributors
+
+[Vishal R \*](https://github.com/iVishalr)
+
+[Royston E Tauro \*](https://github.com/lucasace)
+
+*\*(Equal Contributions)*
 
 ## Requirements
 

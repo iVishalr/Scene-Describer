@@ -34,7 +34,7 @@ I'm just leaving this project here for academic and non-commercial use only.
 
 This will install all the node modules required to run the project.
 
-This project requires Lua to be preinstalled locally. To install Lua and its libraries, refer to the [Lua Installation](https://github.com/SummerProjectCODS/Scene-Describer/tree/master/Lua-Installation) folder.
+This project requires Lua to be preinstalled locally. To install Lua and its libraries, refer to the [Lua Installation](https://github.com/iVishalr/Scene-Describer/tree/master/Lua-Installation) folder. Please make sure you have not skipped the above step. You must also download the model weights depending on the hardware you have in your system. 
 
 If your do not have node installed, [click here](https://nodejs.org/en/download/). Please download the latest stable version of node.
 

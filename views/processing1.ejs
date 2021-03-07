@@ -1,0 +1,58 @@
+<%- include("./partials/header.ejs") %>
+<section>
+  <%- include("./partials/navbar.ejs") %>
+</section>
+<div class="container-box">
+  <div class="container">
+    <div class="row">
+      <header>
+        <div class="overlay"></div>
+        <video
+          playsinline="playsinline"
+          autoplay="autoplay"
+          muted="muted"
+          id="myVideo2"
+          loop="loop"
+        >
+          <source src="/embeded-video/Mare.mp4" type="video/mp4" />
+        </video>
+      </header>
+      <div class="col-sm-12 processing-col">
+        <p class="loading-message">
+          Please wait while we process your video.
+        </p>
+        <img
+          src="/images/805.svg"
+          alt="loading"
+          class="loading-img"
+          onload="document.forms['myForm'].submit()"
+        />
+        <form
+          action="/dashboard/timestamp"
+          method="post"
+          name="myForm"
+          id="MyForm"
+        >
+          <input type="hidden" name="filename" value="<%=filename%>" />
+          <input type="hidden" name="content" value="<%=content%>" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function submitForm() {
+    var form = document.getElementById("MyForm");
+    function handleForm(event) {
+      event.preventDefault();
+    }
+    form.addEventListener("submit", handleForm);
+  }
+  function clickbtn() {
+    console.log("landed in clickbtn");
+    document.querySelector(".hidden").addEventListener("click", function (e) {
+      console.log("clicked");
+    });
+  }
+</script>
+<%- include("./partials/footer.ejs") %>

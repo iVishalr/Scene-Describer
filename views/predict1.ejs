@@ -1,0 +1,48 @@
+<%- include("./partials/header.ejs") %>
+<section>
+  <%- include("./partials/navbar.ejs") %>
+</section>
+<div class="container-box">
+  <div
+    class="container predict-container"
+    style="max-height: inherit; overflow: scroll;"
+  >
+    <div class="row">
+      <div class="col-sm-8 video-col">
+        <div class="video-form">
+          <video class="video-element" controls>
+            <source src="/video/<%=filename%>" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <form action="/dashboard/r/timestamp" method="POST">
+            <div>
+              <p>Please describe a scene in your words</p>
+            </div>
+            <div>
+              <input type="hidden" name="video" value="<%=filename%>" />
+              <textarea
+                name="content"
+                placeholder="Note : You can also use weighted search by specifiying a word in UPPERCASE. This will provide more emphasis to the word."
+                class="textarea"
+              ></textarea>
+            </div>
+            <div class="predict-div">
+              <button
+                type="submit"
+                class="btn btn-md btn-primary upload-btn"
+                onclick="this.form.submit()"
+              >
+                Predict
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./partials/footer.ejs") %>

@@ -1,0 +1,72 @@
+<%- include("./partials/header.ejs") %>
+<section>
+  <%- include("./partials/navbar.ejs") %>
+</section>
+<div class="container-box">
+  <div
+    class="container predict-container"
+    style="max-height: inherit; overflow: scroll;"
+  >
+    <div class="row">
+      <div class="col-sm-8 video-col">
+        <div class="video-form">
+          <video class="video-element" controls>
+            <source src="/video/<%=filename%>" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-sm-4" style="overflow: scroll;">
+        <div>
+          <p style="font-weight: 500; font-size: 1.2rem;">Timestamps</p>
+          <%if(data.Time_Stamps.length!=0){%>
+            <p onclick="setVideoTime('<%=data.Recommended%>')"> Recommended Timestamp : <span class="recommended-timestamp"><%=data.Recommended%></span></p>
+              <p>Possible Timestamps : </p>
+            <ul class="timestamps-list">
+            <%for(let i=0;i<data.Time_Stamps.length;i++){%>
+                <li onclick="setVideoTime('<%=data.Time_Stamps[i]%>')">
+                  <%=data.Time_Stamps[i]%>
+                </li>
+            <%}%>  
+          </ul>
+          <%}%>
+          <%if(data.Time_Stamps.length===0 & data.Recommended.length!=0){%>
+            <p onclick="setVideoTime('<%=data.Recommended%>')"> Recommended Timestamp : <span class="recommended-timestamp"><%=data.Recommended%></span></p>
+          <%}%>
+          <%if(data.Time_Stamps.length===0 & data.Recommended.length===0){%>
+            <p>We could not come up with any suitable timestamp for the description provided.
+              <br>
+              Please try again.
+            </p>
+          <%}%>
+        </div>
+        <form action="/dashboard/repredict" method="POST">
+          <input type="hidden" name="video" value="<%=filename%>">
+          <button type="submit" class="btn btn-md btn-primary home-btn" onclick="this.form.submit();" style="margin-right: 5px;">Try Again</button>
+        </form>
+        <form action="/" method="GET">
+          <button type="submit" class="btn btn-md btn-primary home-btn" onclick="this.form.submit();">Home</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function setVideoTime(time){
+    const video = document.querySelector(".video-element");
+    function hmsToSecondsOnly(str) {
+      var p = str.split(':'),
+          s = 0, m = 1;
+
+      while (p.length > 0) {
+          s += m * parseInt(p.pop(), 10);
+          m *= 60;
+      }
+
+      return s;
+    }
+    let total_time = hmsToSecondsOnly(time);
+    video.currentTime = `${total_time}`;
+  }
+</script>
+<%- include("./partials/footer.ejs") %>

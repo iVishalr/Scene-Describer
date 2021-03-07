@@ -1,0 +1,89 @@
+<%- include("./partials/header.ejs") %>
+<section>
+  <%- include("./partials/navbar.ejs") %>
+</section>
+<div class="container-box">
+  <div class="container">
+    <div class="row">
+      <header>
+        <div class="overlay"></div>
+        <video
+          playsinline="playsinline"
+          autoplay="autoplay"
+          muted="muted"
+          id="myVideo"
+          loop="loop"
+        >
+          <source src="./embeded-video/Beach.mp4" type="video/mp4" />
+        </video>
+      </header>
+      <div class="col-sm upload-col">
+        <div class="video-upload">
+          <h1 class="video-upload-label">Please upload a video file.</h1>
+        </div>
+        <form
+          action="/dashboard/u"
+          method="POST"
+          enctype="multipart/form-data"
+          class="upload-form"
+        >
+          <div class="form-input">
+            <input
+              type="file"
+              id="file"
+              name="filename"
+              accept="video/*"
+              class="file-upload-input"
+            />
+            <button type="button" class="btn btn-sm btn-dark choose-file-btn">
+              Choose File
+            </button>
+            <span class="file-upload-name">No file selected</span>
+          </div>
+          <div class="upload-div">
+            <button
+              type="button"
+              class="btn btn-md btn-success upload-btn"
+              onclick="this.form.submit();"
+            >
+              Upload
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".choose-file-btn"),
+    function (button) {
+      const hiddenInput = button.parentElement.querySelector(
+        ".file-upload-input"
+      );
+      console.log(hiddenInput.files);
+      const label = button.parentElement.querySelector(".file-upload-name");
+      const defaultLabelText = "No file selected";
+
+      label.textContent = defaultLabelText;
+      label.title = defaultLabelText;
+
+      button.addEventListener("click", function () {
+        hiddenInput.click();
+      });
+
+      hiddenInput.addEventListener("change", function () {
+        const filenameList = Array.prototype.map.call(
+          hiddenInput.files,
+          function (file) {
+            return file.name;
+          }
+        );
+
+        label.textContent = filenameList.join(", ") || defaultLabelText;
+        label.title = label.textContent;
+      });
+    }
+  );
+</script>
+<%- include("./partials/footer.ejs") %>

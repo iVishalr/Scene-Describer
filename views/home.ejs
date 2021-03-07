@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+<section>
+  <%- include("./partials/navbar.ejs") %>
+</section>
+<div class="container-box">
+  <div class="container">
+    <div class="row home-row">
+      <div class="col-sm image-section">
+        <img
+          src="./images/home.jpg"
+          alt="welcome-image"
+          class="welcome-image"
+        />
+      </div>
+      <div class="col-sm text-col">
+        <p class="tag-text">
+          Get time stamps of your favourite scenes in a video.
+        </p>
+        <form action="/dashboard" method="post">
+          <button type="submit" class="btn btn-dark btn-md">
+            Get Started
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./partials/footer.ejs") %>

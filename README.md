@@ -61,4 +61,4 @@ For example, when you add an image to the webpage, do not mention public in the 
 
 ### Report
 
-We have provided a detailed report of our project. Please refer [Scene Describer](https://github.com/SummerProjectCODS/Scene-Describer/tree/master/Scene_Describer.pdf)
+We have provided a detailed report of our project. Please refer [Scene Describer](https://github.com/iVishalr/Scene-Describer/tree/master/Scene_Describer.pdf)
